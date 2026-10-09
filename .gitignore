@@ -1,6 +1,7 @@
 # Only the frontend and backend ship in this repo.
 /*
 !/.gitignore
+!/README.md
 !/hookshotfrontend/
 !/hookshotbackend/
 
