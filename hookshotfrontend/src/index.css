@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens, RGB triplets for rgb(var(--x) / <alpha-value>) in Tailwind.
+   Default (no attribute): dark, the platform's default state. [data-theme="light"]
+   swaps to the parchment palette from the Technical Precision design doc; the
+   media query covers users who never pick, following the OS. The auth page's
+   night-skyline SVG keeps its own hardcoded colours by design. */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: 12 24 33; /* #0c1821 */
+  --surface: 12 24 33;
+  --surface-dim: 8 16 24;
+  --surface-deep: 8 16 24;
+  --surface-container-lowest: 6 12 18;
+  --surface-container-low: 8 19 28;
+  --surface-container: 20 33 49;
+  --surface-variant: 17 29 40;
+  --outline: 50 74 95; /* #324a5f */
+  --outline-variant: 27 42 65;
+  --primary: 204 201 220; /* #ccc9dc */
+  --primary-container: 204 201 220;
+  --primary-fixed-dim: 184 181 199;
+  --on-primary: 12 24 33;
+  --secondary: 176 201 227;
+  --secondary-container: 27 42 65;
+  --on-surface: 226 225 236; /* #e2e1ec */
+  --on-surface-variant: 143 162 180;
+  --text-muted: 108 127 147;
+  --text-silver: 226 225 236;
+  --error: 248 113 113; /* #f87171 */
+  --error-container: 69 18 23;
+  --status-success: 52 211 153;
+  --status-warning: 251 191 36;
+  --status-failure: 248 113 113;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --background: 237 237 233; /* #edede9 */
+  --surface: 245 235 224; /* #f5ebe0 */
+  --surface-dim: 236 229 218;
+  --surface-deep: 239 231 220;
+  --surface-container-lowest: 250 246 241;
+  --surface-container-low: 240 233 224;
+  --surface-container: 230 220 208;
+  --surface-variant: 217 206 192;
+  --outline: 111 99 84; /* #6f6354 — dark enough to read as label text */
+  --outline-variant: 214 204 194; /* #d6ccc2 */
+  --primary: 213 189 175; /* #d5bdaf */
+  --primary-container: 213 189 175;
+  --primary-fixed-dim: 194 167 142;
+  --on-primary: 51 38 28;
+  --secondary: 138 109 67;
+  --secondary-container: 168 149 128;
+  --on-surface: 43 36 29; /* warm ink */
+  --on-surface-variant: 109 98 86;
+  --text-muted: 133 120 107;
+  --text-silver: 43 36 29;
+  /* Deepened status colours — the pastel light-mode hexes from the design doc
+     fail WCAG AA on parchment, so light uses 700-weight equivalents. */
+  --error: 179 38 30; /* #b3261e */
+  --error-container: 249 222 220;
+  --status-success: 21 128 61; /* #15803d */
+  --status-warning: 180 83 9; /* #b45309 */
+  --status-failure: 185 28 28; /* #b91c1c */
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --background: 237 237 233;
+    --surface: 245 235 224;
+    --surface-dim: 236 229 218;
+    --surface-deep: 239 231 220;
+    --surface-container-lowest: 250 246 241;
+    --surface-container-low: 240 233 224;
+    --surface-container: 230 220 208;
+    --surface-variant: 217 206 192;
+    --outline: 111 99 84;
+    --outline-variant: 214 204 194;
+    --primary: 213 189 175;
+    --primary-container: 213 189 175;
+    --primary-fixed-dim: 194 167 142;
+    --on-primary: 51 38 28;
+    --secondary: 138 109 67;
+    --secondary-container: 168 149 128;
+    --on-surface: 43 36 29;
+    --on-surface-variant: 109 98 86;
+    --text-muted: 133 120 107;
+    --text-silver: 43 36 29;
+    --error: 179 38 30;
+    --error-container: 249 222 220;
+    --status-success: 21 128 61;
+    --status-warning: 180 83 9;
+    --status-failure: 185 28 28;
+  }
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* One palette, unconditional. html + #root both carry the base colour so the
+     viewport is never transparent while React swaps a route — without this the
+     browser's default canvas shows for a frame on every navigation. */
+  html,
+  body,
+  #root {
+    background-color: rgb(var(--background));
+    min-height: 100%;
+  }
+
+  body {
+    overscroll-behavior: none;
+    color: rgb(var(--on-surface));
+  }
+
+  /* Base-layer keyboard ring for every control that hasn't declared its own.
+     Utilities like focus:outline-none / focus-visible:ring-* outrank this, so
+     components with explicit styles are untouched. Ink, not accent: the accent
+     fails contrast as a ring on the light parchment canvas. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--on-surface));
+    outline-offset: 2px;
+  }
+
+  /* Physical push on press, gated on reduced motion like the rest of the app. */
+  @media (prefers-reduced-motion: no-preference) {
+    button:not(:disabled):active {
+      transform: translateY(1px);
+    }
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="4" fill="#0c1821"/>
+  <!-- The // monogram from the app's sidebar header. -->
+  <path d="M12 11L8 21M17 11L13 21" stroke="#ccc9dc" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- Beacon dot, matching the warning-beacon motif in the auth skyline. -->
+  <circle cx="22" cy="18" r="2" fill="#f87171"/>
+</svg>

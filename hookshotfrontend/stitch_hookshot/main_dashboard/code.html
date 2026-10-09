@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface": "#0c1821",
+        "surface-dim": "#081018",
+        "on-primary": "#0c1821",
+        "text-subtle": "#8fa2b4",
+        "surface-container-highest": "#1e2f42",
+        "on-tertiary": "#223148",
+        "on-secondary-container": "#b0c9e3",
+        "on-error": "#690005",
+        "on-secondary": "#0c1821",
+        "on-secondary-fixed": "#011d31",
+        "on-surface-variant": "#8fa2b4",
+        "outline": "#324a5f",
+        "inverse-on-surface": "#0c1821",
+        "canvas-black": "#000000",
+        "on-error-container": "#ffdad6",
+        "status-success": "#4ade80",
+        "tertiary": "#dde8ff",
+        "secondary-fixed": "#cce5ff",
+        "secondary-fixed-dim": "#b0c9e3",
+        "inverse-surface": "#e2e1ec",
+        "surface-container": "#142131",
+        "on-tertiary-fixed-variant": "#394760",
+        "on-primary-container": "#1b1a28",
+        "surface-variant": "#111d28",
+        "on-tertiary-container": "#48566f",
+        "status-warning": "#facc15",
+        "on-primary-fixed-variant": "#464555",
+        "on-secondary-fixed-variant": "#31495e",
+        "surface-deep": "#081018",
+        "surface-container-low": "#08131c",
+        "surface-bright": "#1e2f42",
+        "background": "#08151d",
+        "error-container": "#451217",
+        "inverse-primary": "#5e5d6d",
+        "outline-variant": "#1b2a41",
+        "on-surface": "#e2e1ec",
+        "primary": "#ccc9dc",
+        "surface-container-lowest": "#060c12",
+        "text-muted": "#6c7f93",
+        "primary-container": "#ccc9dc",
+        "surface-tint": "#ccc9dc",
+        "primary-fixed-dim": "#b8b5c7",
+        "status-failure": "#f87171",
+        "tertiary-fixed": "#d5e3ff",
+        "text-silver": "#e2e1ec",
+        "secondary": "#b0c9e3",
+        "primary-fixed": "#e3e0f4",
+        "on-tertiary-fixed": "#0c1c32",
+        "tertiary-container": "#1b2a41",
+        "secondary-container": "#1b2a41",
+        "surface-container-high": "#1a2a3b",
+        "on-primary-fixed": "#1b1a28",
+        "tertiary-fixed-dim": "#b8c7e5",
+        "on-background": "#e2e1ec",
+        "surface-slate": "#142131",
+        "error": "#f87171"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "space-md": "0.75rem",
+        "space-lg": "1rem",
+        "gutter-mobile": "0.75rem",
+        "space-xl": "1.5rem",
+        "gutter": "1rem",
+        "space-sm": "0.5rem",
+        "margin": "1.5rem",
+        "space-xs": "0.25rem",
+        "margin-mobile": "1rem"
+      },
+      "fontFamily": {
+        "body-sm": ["Inter"],
+        "code-lg": ["JetBrains Mono"],
+        "headline-sm": ["Inter"],
+        "headline-lg": ["Inter"],
+        "code-md": ["JetBrains Mono"],
+        "code-sm": ["JetBrains Mono"],
+        "headline-md": ["Inter"],
+        "label-md": ["JetBrains Mono"],
+        "body-md": ["Inter"],
+        "label-sm": ["JetBrains Mono"]
+      },
+      "fontSize": {
+        "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "fontWeight": "400" }],
+        "code-lg": ["0.875rem", { "lineHeight": "1.375rem", "fontWeight": "500" }],
+        "headline-sm": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "headline-lg": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+        "code-md": ["0.8125rem", { "lineHeight": "1.25rem", "fontWeight": "400" }],
+        "code-sm": ["0.6875rem", { "lineHeight": "1rem", "fontWeight": "400" }],
+        "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+        "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.03em", "fontWeight": "500" }],
+        "body-md": ["0.875rem", { "lineHeight": "1.375rem", "fontWeight": "400" }],
+        "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "500" }]
+      }
+    }
+  }
+};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-60 bg-[#0c1821] border-r border-[#1b2a41] z-40 flex flex-col justify-between select-none"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg border-b border-[#1b2a41] gap-space-sm"><div class="w-5 h-5 rounded bg-primary-container flex items-center justify-center"><span class="font-code-sm text-on-primary font-bold tracking-tighter">//</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">Hookshot</span><span class="font-label-sm text-label-sm text-on-surface-variant ml-auto border border-[#1b2a41] px-space-xs rounded bg-[#142131]/60">v1.4</span></div><nav class="flex flex-col py-space-sm px-space-xs gap-1" data-active-classes="bg-surface-container border border-outline/40 text-on-surface font-medium shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-[#142131] border border-[#324a5f]/40 text-on-surface font-medium shadow-sm transition-colors font-body-md text-body-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px] text-[#ccc9dc]">dashboard</span><span class="">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#142131] hover:text-on-surface transition-colors font-body-md text-body-md" data-path="endpoints" href="#"><span class="material-symbols-outlined text-[18px]">webhook</span><span class="">Endpoints</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#142131] hover:text-on-surface transition-colors font-body-md text-body-md" data-path="events" href="#"><span class="material-symbols-outlined text-[18px]">data_object</span><span class="">Events</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#142131] hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="">Settings</span></a></nav></div><div class="p-space-sm border-t border-[#1b2a41]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-[#451217] hover:text-error transition-colors font-body-md text-body-md" data-path="login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="">Logout</span></a></div></aside><div class="pl-60"><header class="fixed top-0 left-60 right-0 h-16 bg-[#08151d]/95 backdrop-blur-sm border-b border-[#1b2a41] z-30 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"></div><div class="flex items-center gap-space-md"><button aria-label="Toggle theme" class="w-8 h-8 rounded flex items-center justify-center text-text-muted hover:text-on-surface hover:bg-[#142131] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><div class="h-4 w-px bg-[#1b2a41]"></div><div class="flex items-center gap-space-sm"><span class="font-code-sm text-code-sm text-text-muted">alex@acme-corp.internal</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-6 p-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#1b2a41]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-text-muted">// HOOKSHOT ENGINE</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">Overview</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="inline-flex p-1 rounded bg-[#081018] border border-[#1b2a41] items-center gap-1 select-none">
+<button class="px-3 py-1 font-sans text-xs bg-[#ccc9dc] text-black font-medium rounded-sm cursor-default" type="button">Dashboard</button>
+<a class="px-3 py-1 font-sans text-xs text-[#8fa2b4] hover:text-[#e2e1ec] transition-colors rounded-sm" href="#">Endpoints</a>
+<a class="px-3 py-1 font-sans text-xs text-[#8fa2b4] hover:text-[#e2e1ec] transition-colors rounded-sm" href="#">Events</a>
+</div>
+<button class="px-3 py-1.5 rounded-sm text-xs font-semibold bg-transparent border border-[#1b2a41] text-text-silver hover:bg-[#324a5f]/40 transition-colors" type="button">Documentation</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-[#0c1821] border border-[#1b2a41] rounded p-4 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Endpoints</span>
+<div class="mt-2 flex items-baseline">
+<span class="font-headline-lg text-3xl font-semibold tabular-nums text-on-surface tracking-tight">8</span>
+<span class="ml-2 font-code-sm text-code-sm text-on-surface-variant">/ 10 max</span>
+</div>
+</div>
+<div class="bg-[#0c1821] border border-[#1b2a41] rounded p-4 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Events (24h)</span>
+<div class="mt-2 flex items-baseline">
+<span class="font-headline-lg text-3xl font-semibold tabular-nums text-on-surface tracking-tight">142,891</span>
+<span class="ml-2 font-code-sm text-code-sm text-on-surface-variant">total</span>
+</div>
+</div>
+<div class="bg-[#0c1821] border border-[#1b2a41] rounded p-4 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Rate Limit Hits (24h)</span>
+<div class="mt-2 flex items-baseline">
+<span class="font-headline-lg text-3xl font-semibold tabular-nums text-on-surface tracking-tight">0</span>
+<span class="ml-2 font-code-sm text-code-sm text-on-surface-variant">throttled</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-[#0c1821] border border-[#1b2a41] rounded overflow-hidden">
+<div class="flex flex-row items-center justify-between px-4 py-3 border-b border-[#1b2a41] bg-[#060c12]">
+<div class="flex items-baseline gap-3">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium">Recent Events</h2>
+<span class="font-code-sm text-code-sm text-text-muted">Showing last 10 events</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-xs font-code-sm bg-transparent border border-[#1b2a41] text-text-silver hover:text-on-surface hover:bg-[#324a5f]/40 rounded transition-colors" type="button">Export Logs</button>
+</div>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-[#1b2a41] bg-[#08131c] font-code-sm text-label-sm text-text-muted uppercase tracking-wider select-none">
+<th class="py-2.5 px-4 font-medium tracking-wider" scope="col">Type</th>
+<th class="py-2.5 px-4 font-medium tracking-wider" scope="col">Status</th>
+<th class="py-2.5 px-4 font-medium tracking-wider" scope="col">Timestamp</th>
+<th class="py-2.5 px-4 font-medium tracking-wider" scope="col">Endpoint URL</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#1b2a41]/60 font-code-md text-code-md">
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">invoice.paid</td>
+<td class="py-2.5 px-4 text-[#4ade80] font-medium font-code-sm">Delivered</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:28:10 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://api.acme.com/webhooks/v2/stripe-events</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">subscription.created</td>
+<td class="py-2.5 px-4 text-[#4ade80] font-medium font-code-sm">Delivered</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:27:02 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://billing-webhook.internal.corp/dispatch/sub</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">customer.updated</td>
+<td class="py-2.5 px-4 text-[#4ade80] font-medium font-code-sm">Delivered</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:25:44 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://hooks.sync-service.io/inbound/acme</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">charge.refunded</td>
+<td class="py-2.5 px-4 text-[#facc15] font-medium font-code-sm">Duplicate</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:24:19 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://api.acme.com/webhooks/v2/stripe-events</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">invoice.payment_failed</td>
+<td class="py-2.5 px-4 text-[#f87171] font-medium font-code-sm">Failed</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:21:05 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://notifications.acme.com/v1/alert-bus</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">subscription.cancelled</td>
+<td class="py-2.5 px-4 text-[#4ade80] font-medium font-code-sm">Delivered</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:18:30 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://billing-webhook.internal.corp/dispatch/sub</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">order.completed</td>
+<td class="py-2.5 px-4 text-[#4ade80] font-medium font-code-sm">Delivered</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:15:12 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://warehouse.supply.internal/events/orders</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">payment_intent.succeeded</td>
+<td class="py-2.5 px-4 text-[#4ade80] font-medium font-code-sm">Delivered</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:12:59 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://api.acme.com/webhooks/v2/stripe-events</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">dispute.created</td>
+<td class="py-2.5 px-4 text-[#f87171] font-medium font-code-sm">Failed</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:10:45 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://risk-audit.corp.internal/v2/disputes</td>
+</tr>
+<tr class="hover:bg-[#324a5f]/40 transition-colors">
+<td class="py-2.5 px-4 font-medium text-on-surface font-code-md">invoice.finalized</td>
+<td class="py-2.5 px-4 text-[#4ade80] font-medium font-code-sm">Delivered</td>
+<td class="py-2.5 px-4 text-text-muted tabular-nums font-code-sm">2025-05-18 14:08:22 UTC</td>
+<td class="py-2.5 px-4 text-on-surface-variant truncate max-w-xs md:max-w-md font-code-sm">https://billing-webhook.internal.corp/dispatch/sub</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-4 py-3 border-t border-[#1b2a41] flex items-center justify-between bg-[#060c12]">
+<span class="font-code-sm text-code-sm text-text-muted">Page 1 of 1,429</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 border border-[#1b2a41] font-code-sm text-code-sm text-text-silver rounded hover:bg-[#324a5f]/40 disabled:opacity-40 transition-colors cursor-not-allowed" disabled="" type="button">Previous</button>
+<button class="px-3 py-1 border border-[#1b2a41] font-code-sm text-code-sm text-text-silver rounded hover:bg-[#324a5f]/40 transition-colors" type="button">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

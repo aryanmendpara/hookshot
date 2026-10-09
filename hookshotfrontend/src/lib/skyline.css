@@ -1,0 +1,163 @@
+/* One night-sky gradient, in CSS space, shared by both auth columns so the
+   seam is invisible. The SVG's own skyGradient rect is removed for this
+   reason — a userSpaceOnUse gradient scales differently per panel width. */
+.auth-sky {
+  background-image: linear-gradient(
+    to bottom,
+    #020405 0%,
+    #04090e 55%,
+    #081119 85%,
+    #0b1720 100%
+  );
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes redBeacon {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 7px rgba(239, 68, 68, 1));
+  }
+}
+
+/* barely-perceptible parallax on the far tower layer */
+@keyframes bgDrift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes flickerA {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.95;
+  }
+  55% {
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes flickerB {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  60% {
+    opacity: 1;
+  }
+}
+
+@keyframes flickerC {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.15;
+  }
+}
+
+/* Anchored to its pole tip: a small wander, never a translate far enough
+   to read as detached from the mast it sits on. Transform only — the
+   redBeacon keyframes own opacity so blink and drift don't overwrite
+   each other on the same element. */
+@keyframes signalPulse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(0.6px, -1.4px);
+  }
+  65% {
+    transform: translate(-0.4px, -2.2px);
+  }
+}
+
+.star-twinkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Both animations must live on one declaration: a later `animation`
+   shorthand would reset the earlier one. redBeacon owns opacity,
+   signalPulse owns transform, so they layer instead of cancelling. */
+.beacon-flash-1 {
+  animation:
+    redBeacon 1.3s ease-in-out infinite,
+    signalPulse 5s ease-in-out infinite;
+}
+
+.beacon-flash-2 {
+  animation:
+    redBeacon 1.3s ease-in-out infinite 0.65s,
+    signalPulse 5s ease-in-out infinite 0.65s;
+}
+
+.anim-bg-drift {
+  animation: bgDrift 14s ease-in-out infinite;
+}
+
+.anim-flicker-a {
+  animation: flickerA 4.2s ease-in-out infinite;
+}
+
+.anim-flicker-b {
+  animation: flickerB 5.5s ease-in-out infinite;
+}
+
+.anim-flicker-c {
+  animation: flickerC 3.4s ease-in-out infinite;
+}
+
+/* Anchoring only — the animation is declared with the flash class above
+   so both run on the same element. fill-box keeps the wander centred on
+   the light rather than the SVG origin. */
+.anim-signal-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-twinkle,
+  .beacon-flash-1,
+  .beacon-flash-2,
+  .anim-bg-drift,
+  .anim-flicker-a,
+  .anim-flicker-b,
+  .anim-flicker-c,
+  .anim-signal-pulse {
+    animation: none;
+  }
+}

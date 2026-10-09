@@ -1,0 +1,7 @@
+# Only the frontend and backend ship in this repo.
+/*
+!/.gitignore
+!/hookshotfrontend/
+!/hookshotbackend/
+
+.DS_Store
